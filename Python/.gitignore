@@ -5,6 +5,6 @@
 temp/ 
 
 # ignore Sensitive files
-Python/coding.txt
-Python/competitve programming(java edition).pdf
-Python/pip설치.rtf
+coding.txt
+competitve programming(java edition).pdf
+pip설치.rtf
