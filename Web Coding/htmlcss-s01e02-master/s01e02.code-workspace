@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../htmlcss-s01e01"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "htmlcss-s01e02-master"
+	}
+}

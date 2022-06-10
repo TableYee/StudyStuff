@@ -1,0 +1,80 @@
+h1, h2, ul, p{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+body{
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-image: url(images/halloween-background.gif);
+    background-color: gray;
+}
+
+div.wrapper{
+    width: 800px;
+    margin: 50px auto;
+
+}
+
+div.header {
+    background-image: url(images/halloween-header-bg.png);
+    color: auto;
+    height: 400px;
+    text-align: center;
+}
+
+div.header img.profile{
+    margin-top: 50px;
+}
+
+div.header h1{
+    color: violet;
+    margin: 10px 0;
+}
+
+div.header p{
+    background-color: black;
+    color: #888;
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+div.contents div.section{
+    background-color: white;
+    background-image: url(images/icon-information.png);
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    margin: 20px;
+    padding: 20px;
+}
+
+div.contents div.section h2{
+    color: orangered;
+    margin-bottom: 20px;
+}
+
+div.contents div.section li{
+    border-left: 5px solid #ddd;
+    padding: 6px 10px 4px;
+}
+
+.section li:hover {
+    color: orangered;
+    border-left-color: orangered;
+}
+
+div.footer {
+    background-color: #111;
+    color: violet;
+    letter-spacing: 5px;
+    text-indent: 5px;
+    padding: 10px 0;
+    text-align: center;
+}
