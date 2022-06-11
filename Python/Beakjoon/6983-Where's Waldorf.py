@@ -1,3 +1,4 @@
+"""
 t = int(input())
 #안해 이런 더러운 문제
 for _ in range(t):
@@ -8,7 +9,7 @@ for _ in range(t):
     ans = {}
     for i in words:
         ans[i] = [n,m]
-    """
+    
     #horizontal
     for i in range(n):
         for j in words:
@@ -43,7 +44,7 @@ for _ in range(t):
                     ans[j] = [hori[i].index(j)+1, i+1]
                 elif hori[i].index(j) == ans[j][0] and i+1 < i+1-vert[i].count(None):
                     ans[j] = [hori[i].index(j)+1, i+1-vert[i].count(None)]
-    """
+    
     #diagonal /
     vert = [[j for j in i]for i in arr]
     space = [None]*(n-1)
@@ -58,3 +59,25 @@ for _ in range(t):
                     ans[j] = [hori[i].index(j)+1, i+1]
                 elif hori[i].index(j) == ans[j][0] and i+1 < i+1-vert[i].count(None):
                     ans[j] = [hori[i].index(j)+1, i+1-vert[i].count(None)]
+"""
+#dfs로 풀어본다 ㄹㅇ;;;
+t = int(input())
+dx,dy = [1,1,0,-1,-1,-1,-1,0,1],[0,-1,-1,-1,0,1,1,1]
+
+def search(x,y,word):
+    for w in word:
+        for i in range(8):
+            # x가 row보다 커짐, x가 0보다 작아짐, y가 col보다 커짐, y가 0보다 작아짐
+            while x < row and x > 0 and y < col and y > 0:
+                if 
+
+for _ in range(t):
+    col,row = map(int,input().split())
+    arr = [input().lower() for i in range(col)]
+    k = int(input())
+
+    for __ in range(k):
+        word = input().lower()
+        for y in range(col):
+            for x in range(row):
+
