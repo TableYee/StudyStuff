@@ -1,3 +1,4 @@
 .github
 package-lock.jason
 .DS_Store
+.vscode
