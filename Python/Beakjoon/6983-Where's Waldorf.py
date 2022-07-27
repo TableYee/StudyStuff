@@ -62,14 +62,27 @@ for _ in range(t):
 """
 #dfs로 풀어본다 ㄹㅇ;;;
 t = int(input())
-dx,dy = [1,1,0,-1,-1,-1,-1,0,1],[0,-1,-1,-1,0,1,1,1]
+dx,dy = [1,1,0,-1,-1,-1,0,1],[0,-1,-1,-1,0,1,1,1]
 
-def search(x,y,word):
-    for w in word:
-        for i in range(8):
-            # x가 row보다 커짐, x가 0보다 작아짐, y가 col보다 커짐, y가 0보다 작아짐
-            while x < row and x > 0 and y < col and y > 0:
-                if 
+def search(x,y,word):  
+    for i in range(8):
+        tx = x
+        ty = y
+        temp = ''
+        for w in word:
+            # x가 row과 같거나 커짐, x가 0보다 작아짐, y가 col과 같거나 커짐, y가 0보다 작아짐
+            if tx >= row or tx < 0 or ty >= col or ty < 0:
+                break
+            # 현재 단어가 틀림
+            temp += arr[ty][tx]
+            if w != arr[ty][tx]:
+                break
+            if temp == word:
+                return [y+1,x+1]
+            tx += dx[i]
+            ty += dy[i]
+    return 0
+                
 
 for _ in range(t):
     col,row = map(int,input().split())
@@ -77,7 +90,27 @@ for _ in range(t):
     k = int(input())
 
     for __ in range(k):
+        ans = []
         word = input().lower()
         for y in range(col):
             for x in range(row):
-
+                if word[0] == arr[y][x]:
+                    ans = search(x,y,word)
+                    if ans:
+                        print(*ans)
+                        break
+            else:
+                continue
+            break
+        if not ans:
+            print(col,row)
+    print()
+"""
+1
+2 2
+by
+re
+2
+be
+ab
+"""
