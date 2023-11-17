@@ -1,26 +1,26 @@
-import math
-from statistics import median
-#n,*lst = map(int, open(0).read().split())
 n = int(input())
-lst = list(map(int,input().split()))
+nums = list(map(int,input().split()))
+lst = [0 for i in range(10001)]
+minSum = 10**64
+ans1, ans2 = 0,0
 
-print(int(median(lst)), end=' ')
-print(math.floor(sum(lst)/n))
+for i in nums:
+    lst[i]+=1
 
-"""
-minAns, expAns = [10**10,10**10], [10**10,10**10]
+for i in range(1,10000):
+    sum1 = 0
+    for j in range(1,10000):
+        sum1 += abs(i-j)*lst[j]
+    if sum1 < minSum:
+        minSum = sum1
+        ans1 = i
 
-for i in range(1,max(lst)+1):
-    minSum, expSum = 0,0
-    for j in range(n):
-        minSum += abs(lst[j] - i)
-        expSum += (lst[j] - i)**2
-
-    if minAns[1] > minSum:
-        minAns[0], minAns[1] = i, minSum
-
-    if expAns[1] > expSum:
-        expAns[0], expAns[1] = i, expSum
-
-print(minAns[0], expAns[0])
-"""
+minSum = 10**64
+for i in range(1,10000):
+    sum2 = 0
+    for j in range(1,10000):
+        sum2 += (i-j)**2*lst[j]
+    if sum2 < minSum:
+        minSum = sum2
+        ans2 = i
+print(ans1,ans2)
